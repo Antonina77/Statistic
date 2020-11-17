@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class StatsServiceTest {
 
     @Test
-    void ShouldCalculateSum() {
+    void shouldCalculateSum() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
@@ -17,32 +17,32 @@ class StatsServiceTest {
 
 
     @Test
-    void ShouldcalculateAvergeTotal() {
+    void shouldCalculateAvergeTotal() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.CalculateAverageTotal(purchases);
+        int actual = service.calculateAverageTotal(purchases);
         assertEquals(expected, actual);
     }
 
 
     @Test
-    void ShouldFindMaxMonthSale() {
+    void shouldFindMaxMonthSale() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
-        int actual = service.FindMaxMonthSale(purchases);
+        int actual = service.findMaxMonthSale(purchases);
 
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void ShouldFindMinMonthSale() {
+    void shouldFindMinMonthSale() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
-        int actual = service.FindMinMonthSale(purchases);
+        int actual = service.findMinMonthSale(purchases);
 
 
         assertEquals(expected, actual);
@@ -50,22 +50,22 @@ class StatsServiceTest {
 
 
     @Test
-    void ShouldCalculateMaxAverageCount() {
+    void shouldCalculateMaxAverageCount() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
-        int actual = service.CalculateMaxAverageCount(purchases);
+        int actual = service.calculateMaxAverageCount(purchases);
 
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void ShouldCalculateMinAverageCount() {
+    void shouldCalculateMinAverageCount() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
-        int actual = service.CalculateMinAverageCount(purchases);
+        int actual = service.calculateMinAverageCount(purchases);
 
 
         assertEquals(expected, actual);

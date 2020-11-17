@@ -12,16 +12,19 @@ public class StatsService {
         return sum;
     }
 
-    public int CalculateAverageTotal(int[] purshases) {
-        int total = 0;
-        for (int purchace : purshases) {
-            total += purchace;
-
+    public int calculateAverageTotal(int[] purchases) {
+        int total = calculateSum(purchases);
+        int NumberMonth = 0;
+        int Average = total / purchases.length;
+        for (int i = 0; i < purchases.length; i++) {
+            if (purchases[i] < Average)
+                NumberMonth++;
         }
-        return total / 12;
+        return NumberMonth;
+
     }
 
-    public int FindMaxMonthSale(int[] purshases) {
+    public int findMaxMonthSale(int[] purshases) {
         int MaxMonth = purshases[0];
         int monthNumber = 0;
 
@@ -35,8 +38,7 @@ public class StatsService {
         return monthNumber + 1;
     }
 
-
-    public int FindMinMonthSale(int[] purshases) {
+    public int findMinMonthSale(int[] purshases) {
         int MinMonth = purshases[0];
         int monthNumber = 0;
 
@@ -51,10 +53,9 @@ public class StatsService {
         return monthNumber + 1;
     }
 
+    public int calculateMaxAverageCount(int[] purshases) {
 
-    public int CalculateMaxAverageCount(int[] purshases) {
-
-        int averageAmount = CalculateAverageTotal(purshases);
+        int averageAmount = calculateAverageTotal(purshases);
         int count = 0;
 
         for (int purchase : purshases) {
@@ -65,9 +66,9 @@ public class StatsService {
         return count;
     }
 
-    public int CalculateMinAverageCount(int[] purshases) {
+    public int calculateMinAverageCount(int[] purshases) {
 
-        int averageAmount = CalculateAverageTotal(purshases);
+        int averageAmount = calculateAverageTotal(purshases);
         int count = 0;
 
         for (int purchase : purshases) {
